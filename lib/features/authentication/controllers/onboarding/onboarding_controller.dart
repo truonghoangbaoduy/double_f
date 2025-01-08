@@ -20,7 +20,7 @@ class OnBoardingController extends GetxController {
 
   /// Update current index & jump to next page
   void nextPage() {
-    if (currentPageIndex.value == 2) {
+    if (currentPageIndex.value == 3) {
       final storage = GetStorage();
 
       storage.write('IsFirstTime', false);
@@ -33,7 +33,7 @@ class OnBoardingController extends GetxController {
 
   /// Update current index & jump to last page
   void skipPage() {
-    currentPageIndex.value = 2;
-    pageController.jumpToPage(2);
+    currentPageIndex.value = 3;
+    pageController.jumpToPage(3);
   }
 }

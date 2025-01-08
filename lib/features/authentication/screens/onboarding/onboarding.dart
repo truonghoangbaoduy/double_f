@@ -22,17 +22,23 @@ class OnboardingScreen extends StatelessWidget {
             onPageChanged: controller.updatePageIndicator,
             children: const [
               OnBoardingPage(
-                  image: 'assets/images/onboarding/sammy-line-searching.gif',
+                  image: 'assets/logos/logo.jpg',
+                  title: 'Welcome to Double F',
+                  subTitle:
+                      'Get your parcels delivered fast and reliably. Track in real-time and enjoy smarter routes with DoubleF—your delivery made simple.'),
+              OnBoardingPage(
+                  image: 'assets/images/onboarding/fast_optimized_route.png',
                   title: 'Fast and Optimized Route',
                   subTitle:
                       'Faster deliveries, every time. Our smart routing avoids traffic, weather delays, and other disruptions, so your parcel arrives on time.'),
               OnBoardingPage(
-                  image: 'assets/images/onboarding/sammy-line-shopping.gif',
+                  image:
+                      'assets/images/onboarding/flexible_shipping_options.png',
                   title: 'Flexible Shipping Options',
                   subTitle:
                       'Delivery options designed for you—pick what fits your schedule and needs.'),
               OnBoardingPage(
-                  image: 'assets/images/onboarding/sammy-line-delivering.gif',
+                  image: 'assets/images/onboarding/cashless_payment.png',
                   title: 'Cashless Payment',
                   subTitle:
                       'Pay online with ease. Our cashless options make every delivery smooth and secure.'),
