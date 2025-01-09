@@ -1,4 +1,5 @@
 import 'package:double_f_last_mile_delivery/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:double_f_last_mile_delivery/features/order/screens/order_placement.dart';
 import 'package:double_f_last_mile_delivery/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,14 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       themeMode: ThemeMode.light,
       theme: TAppTheme.lightTheme,
-      home: const OnboardingScreen(),
+      home: const OrderPlacementScreen(),
+      getPages: [
+        GetPage(
+          name: '/onboarding',
+          page: () => const OnboardingScreen(),
+        ),
+        GetPage(name: '/order', page: () => const OrderPlacementScreen()),
+      ],
     );
   }
 }

@@ -13,6 +13,7 @@ dependencies:
 
   # Utility Packages
   smooth_page_indicator: ^1.1.0
+  google_maps_flutter: ^2.0.0
 
   # Icons
   cupertino_icons: ^1.0.6
