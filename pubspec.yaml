@@ -21,6 +21,7 @@ dependencies:
   # State Management
   get: ^4.6.5
   get_storage: ^2.1.1
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +35,9 @@ flutter:
   #------------- LOCAL ASSETS -------------#
   assets:
     - assets/images/onboarding/
+    - assets/images/logo/
+    - assets/images/home/
+    - assets/icons/
 
   #------------- LOCAL FONTS -------------#
   fonts:

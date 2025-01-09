@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       themeMode: ThemeMode.light,
       theme: TAppTheme.lightTheme,
+      debugShowCheckedModeBanner: false,
       home: const OnboardingScreen(),
     );
   }
