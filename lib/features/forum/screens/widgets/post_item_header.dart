@@ -27,13 +27,16 @@ class PostItemHeader extends StatelessWidget {
               children: [
                 Text(
                   'Jack',
-                  style: Theme.of(context).textTheme.titleLarge?.merge(
-                      const TextStyle(color: AppColors.black, height: 1)),
+                  style: Theme.of(context).textTheme.titleMedium?.merge(
+                      const TextStyle(
+                          color: AppColors.black,
+                          height: 1.2,
+                          fontWeight: FontWeight.w600)),
                 ),
                 Text(
                   'Customer',
                   style: Theme.of(context).textTheme.bodyMedium?.merge(
-                      const TextStyle(color: AppColors.darkGrey, height: 1)),
+                      const TextStyle(color: AppColors.darkGrey, height: 1.2)),
                 ),
               ],
             ),

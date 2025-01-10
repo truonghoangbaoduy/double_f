@@ -7,11 +7,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        HomeScreenHeader(),
-        HomeScreenBody(),
-      ],
+    return const SafeArea(
+      child: Column(
+        children: [
+          HomeScreenHeader(),
+          HomeScreenBody(),
+        ],
+      ),
     );
   }
 }

@@ -8,11 +8,13 @@ class ForumScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        children: [
-          ForumScreenHeader(),
-          ForumScreenBody(),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            ForumScreenHeader(),
+            ForumScreenBody(),
+          ],
+        ),
       ),
     );
   }
