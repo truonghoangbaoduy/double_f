@@ -41,18 +41,18 @@ const List<String> wardList = <String>[
 ];
 
 const List<String> streetList = <String>[
-  'Duong Nguyen Trai',
-  'Duong Nguyen Dinh Chieu',
-  'Duong Nguyen Thi Minh Khai',
-  'Duong Nguyen Van Cu',
-  'Duong Mai Chi Tho',
-  'Duong Le Van Luong',
-  'Duong Tran Hung Dao',
-  'Duong Tran Phu',
-  'Duong Tran Quoc Toan',
-  'Duong Tran Nhan Ton',
-  'Duong Ly Thuong Kiet',
-  'Duong Ly Tu Trong'
+  'Nguyen Trai',
+  'Nguyen Dinh Chieu',
+  'Nguyen Thi Minh Khai',
+  'Nguyen Van Cu',
+  'Mai Chi Tho',
+  'Le Van Luong',
+  'Tran Hung Dao',
+  'Tran Phu',
+  'Tran Quoc Toan',
+  'Tran Nhan Ton',
+  'Ly Thuong Kiet',
+  'Ly Tu Trong'
 ];
 
 List<String> receiveAtList = <String>['specific', 'post_office'];
@@ -126,15 +126,17 @@ class _AddressOrderState extends State<AddressOrder> {
               Expanded(
                 child: DropdownButtonFormField<String>(
                     decoration: const InputDecoration(
-                        prefixIcon: Icon(Iconsax.buildings),
-                        label: Text.rich(TextSpan(text: 'City', children: [
-                          TextSpan(
-                              text: ' *',
-                              style: TextStyle(
-                                color: Colors.red,
-                              ))
-                        ]))),
+                      prefixIcon: Icon(Iconsax.buildings),
+                      label: Text.rich(TextSpan(text: 'City', children: [
+                        TextSpan(
+                            text: ' *',
+                            style: TextStyle(
+                              color: Colors.red,
+                            ))
+                      ])),
+                    ),
                     value: cityValue,
+                    isExpanded: true,
                     items:
                         cityList.map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
@@ -193,6 +195,7 @@ class _AddressOrderState extends State<AddressOrder> {
                               ))
                         ]))),
                     value: wardValue,
+                    isExpanded: true,
                     items:
                         wardList.map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
@@ -293,6 +296,7 @@ class _AddressOrderState extends State<AddressOrder> {
                               ))
                         ]))),
                     value: cityValue,
+                    isExpanded: true,
                     items:
                         cityList.map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
@@ -320,6 +324,7 @@ class _AddressOrderState extends State<AddressOrder> {
                               ))
                         ]))),
                     value: districtValue,
+                    isExpanded: true,
                     items: districtList
                         .map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
@@ -351,6 +356,7 @@ class _AddressOrderState extends State<AddressOrder> {
                               ))
                         ]))),
                     value: wardValue,
+                    isExpanded: true,
                     items:
                         wardList.map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
@@ -411,7 +417,7 @@ class _AddressOrderState extends State<AddressOrder> {
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(width: 2, color: Colors.grey)),
+                    side: const BorderSide(width: 1, color: Colors.grey)),
                 selectedColor: Colors.green[100],
                 selected: receiveAt == 'specific',
                 showCheckmark: false,
@@ -427,7 +433,7 @@ class _AddressOrderState extends State<AddressOrder> {
                 avatar: const Icon(Iconsax.building),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(width: 2, color: Colors.grey)),
+                    side: const BorderSide(width: 1, color: Colors.grey)),
                 selectedColor: Colors.green[100],
                 selected: receiveAt == 'post_office',
                 showCheckmark: false,

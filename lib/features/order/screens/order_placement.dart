@@ -1,5 +1,7 @@
 import 'package:double_f_last_mile_delivery/features/order/screens/widgets/address_order.dart';
+import 'package:double_f_last_mile_delivery/features/order/screens/widgets/cargo_order.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class OrderPlacementScreen extends StatefulWidget {
   const OrderPlacementScreen({super.key});
@@ -75,17 +77,55 @@ class _OrderPlacementScreenState extends State<OrderPlacementScreen> {
                     currentStep >= 1 ? StepState.complete : StepState.indexed),
             Step(
                 title: const Text('Cargo'),
-                content: const Text('This is the second step.'),
+                content: const CargoOrder(),
                 isActive: currentStep >= 1,
                 state:
                     currentStep >= 2 ? StepState.complete : StepState.indexed),
             Step(
                 title: const Text('Shipping Fee'),
-                content: const Text('This is the third step.'),
+                content: ShippingFeeOrder(),
                 isActive: currentStep >= 2),
           ],
         ),
       ),
     ));
+  }
+}
+
+class ShippingFeeOrder extends StatelessWidget {
+  const ShippingFeeOrder({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Shipping Fee',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const Row(
+              children: [Text('See all'), Icon(Iconsax.arrow_right_3)],
+            )
+          ],
+        ),
+        Container(
+          child: Row(
+            children: [
+              Icon(Iconsax.truck, size: 20),
+            ],
+          ),
+        ),
+        const SizedBox(height: 16),
+        ListView(
+          children: [],
+        )
+      ],
+    );
   }
 }
