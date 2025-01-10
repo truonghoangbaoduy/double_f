@@ -1,13 +1,17 @@
+import 'package:double_f_last_mile_delivery/features/home/controllers/home_controller.dart';
 import 'package:double_f_last_mile_delivery/features/home/screens/widgets/service_item.dart';
 import 'package:double_f_last_mile_delivery/utils/constrains/colors.dart';
 import 'package:double_f_last_mile_delivery/utils/constrains/dimens.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ServiceList extends StatelessWidget {
   const ServiceList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(HomeController());
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.max,
@@ -40,15 +44,30 @@ class ServiceList extends StatelessWidget {
           ],
         ),
         const SizedBox(height: AppDimens.sectionMarginSmall),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.max,
           children: [
-            ServiceItem(title: 'Send', icon: 'assets/icons/delivery.svg'),
-            ServiceItem(title: 'Forum', icon: 'assets/icons/forum.svg'),
-            ServiceItem(title: 'Service', icon: 'assets/icons/scooter.svg'),
-            ServiceItem(title: 'Service', icon: 'assets/icons/scooter.svg'),
-            ServiceItem(title: 'Service', icon: 'assets/icons/scooter.svg')
+            ServiceItem(
+                title: 'Send',
+                icon: 'assets/icons/delivery.svg',
+                onTap: () => controller.handleSendClick()),
+            ServiceItem(
+                title: 'Forum',
+                icon: 'assets/icons/forum.svg',
+                onTap: () => controller.handleForumClick()),
+            ServiceItem(
+                title: 'Service',
+                icon: 'assets/icons/scooter.svg',
+                onTap: () => controller.handleServiceClick()),
+            ServiceItem(
+                title: 'Service',
+                icon: 'assets/icons/scooter.svg',
+                onTap: () => controller.handleServiceClick()),
+            ServiceItem(
+                title: 'Service',
+                icon: 'assets/icons/scooter.svg',
+                onTap: () => controller.handleServiceClick())
           ],
         )
       ],

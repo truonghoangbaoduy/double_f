@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
-class SearchBar extends StatelessWidget {
-  const SearchBar({super.key});
+class HomeScreenSearchBar extends StatelessWidget {
+  const HomeScreenSearchBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: AppDimens.inputHorizontalPadding,
+        horizontal: AppDimens.inputHorizontalPaddingMedium,
         vertical: AppDimens.inputVerticalPadding,
       ),
       decoration: BoxDecoration(
@@ -27,16 +27,18 @@ class SearchBar extends StatelessWidget {
           const SizedBox(width: AppDimens.sectionMarginSmall),
           Expanded(
             child: TextField(
+              cursorColor: AppColors.primary,
               decoration: InputDecoration(
-                  hintText: 'Order tracking ...',
-                  hintStyle: Theme.of(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(color: AppColors.lightGrey),
-                  border: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  enabledBorder: InputBorder.none,
-                  contentPadding: const EdgeInsets.all(0)),
+                hintText: 'Order tracking ...',
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .bodyMedium
+                    ?.copyWith(color: AppColors.lightGrey),
+                border: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                contentPadding: const EdgeInsets.all(0),
+              ),
             ),
           ),
           const Icon(

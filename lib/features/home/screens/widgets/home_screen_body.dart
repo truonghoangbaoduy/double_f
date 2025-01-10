@@ -1,4 +1,4 @@
-import 'package:double_f_last_mile_delivery/features/home/screens/widgets/search_bar.dart';
+import 'package:double_f_last_mile_delivery/features/home/screens/widgets/home_screen_search_bar.dart';
 import 'package:double_f_last_mile_delivery/features/home/screens/widgets/serivce_list.dart';
 import 'package:double_f_last_mile_delivery/features/home/screens/widgets/user_info.dart';
 import 'package:double_f_last_mile_delivery/utils/constrains/dimens.dart';
@@ -14,11 +14,13 @@ class HomeScreenBody extends StatelessWidget {
           horizontal: AppDimens.appHorizontalPadding),
       child: Expanded(
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               const UserInfo(),
               const SizedBox(height: AppDimens.sectionMarginLarge),
-              const SearchBar(),
+              const HomeScreenSearchBar(),
               const SizedBox(height: AppDimens.sectionMarginMedium),
               Image.asset('assets/images/home/shipping-banner.png'),
               const SizedBox(height: AppDimens.sectionMarginMedium),

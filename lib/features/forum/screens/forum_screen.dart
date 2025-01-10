@@ -1,3 +1,5 @@
+import 'package:double_f_last_mile_delivery/features/forum/screens/widgets/forum_screen_body.dart';
+import 'package:double_f_last_mile_delivery/features/forum/screens/widgets/forum_screen_header.dart';
 import 'package:flutter/material.dart';
 
 class ForumScreen extends StatelessWidget {
@@ -5,10 +7,12 @@ class ForumScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Forum Screen',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+    return const Scaffold(
+      body: Column(
+        children: [
+          ForumScreenHeader(),
+          ForumScreenBody(),
+        ],
       ),
     );
   }
