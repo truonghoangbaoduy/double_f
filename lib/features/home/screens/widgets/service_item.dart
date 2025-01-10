@@ -62,6 +62,7 @@ class ServiceItem extends StatelessWidget {
             Text(
               title,
               style: Theme.of(context).textTheme.bodySmall,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
