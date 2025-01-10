@@ -1,3 +1,4 @@
+import "package:double_f_last_mile_delivery/utils/constrains/colors.dart";
 import "package:flutter/material.dart";
 import "package:double_f_last_mile_delivery/utils/theme/custom_themes/appbar_theme.dart";
 import "package:double_f_last_mile_delivery/utils/theme/custom_themes/bottom_sheet_theme.dart";
@@ -15,7 +16,7 @@ class TAppTheme {
     useMaterial3: true,
     fontFamily: 'Poppins',
     brightness: Brightness.light,
-    primaryColor: Colors.blue,
+    primaryColor: AppColors.primary,
     textTheme: TTextTheme.lightTextTheme,
     chipTheme: TChipTheme.lightChipTheme,
     scaffoldBackgroundColor: Colors.white,

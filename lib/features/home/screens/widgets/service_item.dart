@@ -4,15 +4,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ServiceItem extends StatelessWidget {
-  const ServiceItem({super.key, required this.title, required this.icon});
+  const ServiceItem(
+      {super.key,
+      required this.title,
+      required this.icon,
+      required this.onTap});
 
   final String title;
   final String icon;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: AppDimens.iconSizeLarge,
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        padding: EdgeInsets.zero,
+        minimumSize: Size.zero,
+        side: BorderSide.none,
+      ),
+      onPressed: onTap,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
