@@ -24,7 +24,9 @@ class ServiceItem extends StatelessWidget {
         minimumSize: Size.zero,
         side: BorderSide.none,
       ),
-      onPressed: onTap,
+      onPressed: () {
+        onTap();
+      },
       child: SizedBox(
         width: 60,
         child: Column(
@@ -60,6 +62,7 @@ class ServiceItem extends StatelessWidget {
             Text(
               title,
               style: Theme.of(context).textTheme.bodySmall,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
