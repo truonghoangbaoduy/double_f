@@ -20,11 +20,9 @@ class HomeScreenBody extends StatelessWidget {
             children: [
               const UserInfo(),
               const SizedBox(height: AppDimens.sectionMarginLarge),
-              const HomeScreenSearchBar(),
+              const HomeScreenSearchBar(hint: 'Order tracking...'),
               const SizedBox(height: AppDimens.sectionMarginMedium),
               Image.asset('assets/images/home/shipping-banner.png'),
-              const SizedBox(height: AppDimens.sectionMarginMedium),
-              const ServiceList(),
               const SizedBox(height: AppDimens.sectionMarginMedium),
               const ServiceList(),
             ],

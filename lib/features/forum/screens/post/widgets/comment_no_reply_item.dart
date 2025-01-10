@@ -47,14 +47,20 @@ class CommentNoReplyItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      'Author',
-                      style: Theme.of(context).textTheme.labelMedium?.merge(
-                          const TextStyle(
-                              color: AppColors.darkGrey,
-                              height: 1.2,
-                              fontStyle: FontStyle.italic)),
-                    ),
+                    isAuthor
+                        ? Text(
+                            'Author',
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelMedium
+                                ?.merge(const TextStyle(
+                                    color: AppColors.darkGrey,
+                                    height: 1.2,
+                                    fontStyle: FontStyle.italic)),
+                          )
+                        : const SizedBox(
+                            width: 0,
+                          ),
                     Text(
                       name,
                       style: Theme.of(context).textTheme.titleMedium?.merge(
