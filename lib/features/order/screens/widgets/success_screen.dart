@@ -1,4 +1,6 @@
+import 'package:double_f_last_mile_delivery/features/home/screens/home_screen_navigator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({super.key});
@@ -39,7 +41,7 @@ class SuccessScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Handle navigation or action here
-                Navigator.pop(context);
+                Get.to(HomeScreenNavigation());
               },
               style: ElevatedButton.styleFrom(
                 padding:
