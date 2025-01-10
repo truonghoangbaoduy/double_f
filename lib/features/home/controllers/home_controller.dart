@@ -6,7 +6,7 @@ class HomeController extends GetxController {
   static HomeController get instance => Get.find();
 
   void handleForumClick() {
-    Get.offAll(const ForumScreen());
+    Get.to(const ForumScreen());
   }
 
   void handleSendClick() {

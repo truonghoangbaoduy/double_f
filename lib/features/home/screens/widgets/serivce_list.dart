@@ -46,28 +46,34 @@ class ServiceList extends StatelessWidget {
         const SizedBox(height: AppDimens.sectionMarginSmall),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           children: [
             ServiceItem(
-                title: 'Send',
-                icon: 'assets/icons/delivery.svg',
-                onTap: () => controller.handleSendClick()),
+              title: 'Normal Delivery',
+              icon: 'assets/icons/delivery.svg',
+              onTap: () => controller.handleSendClick(),
+            ),
             ServiceItem(
-                title: 'Forum',
-                icon: 'assets/icons/forum.svg',
-                onTap: () => controller.handleForumClick()),
+              title: 'Intl. Delivery',
+              icon: 'assets/icons/international_delivery.svg',
+              onTap: () => controller.handleServiceClick(),
+            ),
             ServiceItem(
-                title: 'Service',
-                icon: 'assets/icons/scooter.svg',
-                onTap: () => controller.handleServiceClick()),
+              title: 'Express Delivery',
+              icon: 'assets/icons/express_delivery.svg',
+              onTap: () => controller.handleServiceClick(),
+            ),
             ServiceItem(
-                title: 'Service',
-                icon: 'assets/icons/scooter.svg',
-                onTap: () => controller.handleServiceClick()),
+              title: 'Fast Delivery',
+              icon: 'assets/icons/scooter.svg',
+              onTap: () => controller.handleServiceClick(),
+            ),
             ServiceItem(
-                title: 'Service',
-                icon: 'assets/icons/scooter.svg',
-                onTap: () => controller.handleServiceClick())
+              title: 'Forum',
+              icon: 'assets/icons/forum.svg',
+              onTap: () => controller.handleForumClick(),
+            ),
           ],
         )
       ],

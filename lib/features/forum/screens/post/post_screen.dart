@@ -4,9 +4,7 @@ import 'package:double_f_last_mile_delivery/features/forum/screens/post/widgets/
 import 'package:double_f_last_mile_delivery/features/forum/screens/post/widgets/post_screen_body.dart';
 import 'package:double_f_last_mile_delivery/features/forum/screens/post/widgets/post_screen_header.dart';
 import 'package:double_f_last_mile_delivery/utils/constrains/dimens.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class PostScreen extends StatelessWidget {
   const PostScreen({super.key});

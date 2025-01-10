@@ -12,4 +12,8 @@ class AppColors {
   static const Color red = Color(0xFFE12828);
   static const Color skyBlue = Color(0xFF87CEEB);
   static const Color darkBlue = Color(0xFF1484CD);
+
+  static const Color neutralDisable = Color(0xFFADB5BD);
+  static const Color neutralOffWhite = Color(0xFFF7F7FC);
+  static const Color messageNotification = Color(0x1FD84D4D);
 }

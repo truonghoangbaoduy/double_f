@@ -26,6 +26,6 @@ class AppDimens {
   // input
   static const double inputHorizontalPaddingSmall = 8;
   static const double inputHorizontalPaddingMedium = 16;
-  static const double inputVerticalPadding = 4;
+  static const double inputVerticalPadding = 2;
   static const double inputBorderRadius = 16;
 }
