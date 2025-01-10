@@ -1,3 +1,5 @@
+import 'package:double_f_last_mile_delivery/features/authentication/controllers/authentication/authentication_controller.dart';
+import 'package:double_f_last_mile_delivery/features/authentication/screens/login/login.dart';
 import 'package:double_f_last_mile_delivery/features/home/controllers/home_controller.dart';
 import 'package:double_f_last_mile_delivery/features/home/screens/widgets/service_item.dart';
 import 'package:double_f_last_mile_delivery/utils/constrains/colors.dart';
@@ -11,6 +13,7 @@ class ServiceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(HomeController());
+    final authenController = Get.put(AuthenticationController());
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -52,27 +55,45 @@ class ServiceList extends StatelessWidget {
             ServiceItem(
               title: 'Normal Delivery',
               icon: 'assets/icons/delivery.svg',
-              onTap: () => controller.handleSendClick(),
+              onTap: () {
+                controller.handleSendClick();
+              },
             ),
             ServiceItem(
               title: 'Intl. Delivery',
               icon: 'assets/icons/international_delivery.svg',
-              onTap: () => controller.handleServiceClick(),
+              onTap: () {
+                authenController.isLogin.value
+                    ? controller.handleServiceClick()
+                    : Get.to(const LoginScreen());
+              },
             ),
             ServiceItem(
               title: 'Express Delivery',
               icon: 'assets/icons/express_delivery.svg',
-              onTap: () => controller.handleServiceClick(),
+              onTap: () {
+                authenController.isLogin.value
+                    ? controller.handleServiceClick()
+                    : Get.to(const LoginScreen());
+              },
             ),
             ServiceItem(
               title: 'Fast Delivery',
               icon: 'assets/icons/scooter.svg',
-              onTap: () => controller.handleServiceClick(),
+              onTap: () {
+                authenController.isLogin.value
+                    ? controller.handleServiceClick()
+                    : Get.to(const LoginScreen());
+              },
             ),
             ServiceItem(
               title: 'Forum',
               icon: 'assets/icons/forum.svg',
-              onTap: () => controller.handleForumClick(),
+              onTap: () {
+                authenController.isLogin.value
+                    ? controller.handleForumClick()
+                    : Get.to(const LoginScreen());
+              },
             ),
           ],
         )

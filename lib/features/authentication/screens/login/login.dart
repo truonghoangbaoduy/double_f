@@ -1,4 +1,6 @@
+import 'package:double_f_last_mile_delivery/features/authentication/controllers/authentication/authentication_controller.dart';
 import 'package:double_f_last_mile_delivery/features/home/screens/home_screen_navigator.dart';
+import 'package:double_f_last_mile_delivery/features/home/screens/home_screen_not_singed.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -15,6 +17,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(AuthenticationController());
+
     return Scaffold(
       body: Padding(
         padding:
@@ -91,6 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: ElevatedButton(
                       onPressed: () {
                         Get.to(() => HomeScreenNavigation());
+                        controller.handleLogin();
                       },
                       child: const Text('Sign in'),
                     ),
@@ -105,6 +110,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   //     child: const Text('Create account'),
                   //   ),
                   // ),
+                  TextButton(
+                      onPressed: () {
+                        controller.handleLogout();
+                        Get.to(const HomeScreenNotSigned());
+                      },
+                      child: const Text('Using without account')),
                   const SizedBox(height: 16),
                 ],
               ),
