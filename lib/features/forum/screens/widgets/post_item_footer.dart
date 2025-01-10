@@ -1,13 +1,17 @@
+import 'package:double_f_last_mile_delivery/features/forum/controllers/forum_controller.dart';
 import 'package:double_f_last_mile_delivery/utils/constrains/colors.dart';
 import 'package:double_f_last_mile_delivery/utils/constrains/dimens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class PostItemFooter extends StatelessWidget {
   const PostItemFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ForumController());
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -74,24 +78,34 @@ class PostItemFooter extends StatelessWidget {
                         fontWeight: FontWeight.w500)),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SvgPicture.asset(
-                  'assets/icons/comment.svg',
-                  width: AppDimens.iconSizeMediumSmall,
-                  height: AppDimens.iconSizeMediumSmall,
-                  colorFilter: const ColorFilter.mode(
-                      AppColors.darkGrey, BlendMode.srcIn),
-                ),
-                const SizedBox(width: AppDimens.iconMarginMedium),
-                Text('Comment',
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: AppColors.darkGrey,
-                        letterSpacing: 0.5,
-                        fontWeight: FontWeight.w500)),
-              ],
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                shadowColor: Colors.transparent,
+                padding: EdgeInsets.zero,
+                minimumSize: Size.zero,
+                side: BorderSide.none,
+              ),
+              onPressed: () => controller.handleClickComment(),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/comment.svg',
+                    width: AppDimens.iconSizeMediumSmall,
+                    height: AppDimens.iconSizeMediumSmall,
+                    colorFilter: const ColorFilter.mode(
+                        AppColors.darkGrey, BlendMode.srcIn),
+                  ),
+                  const SizedBox(width: AppDimens.iconMarginMedium),
+                  Text('Comment',
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: AppColors.darkGrey,
+                          letterSpacing: 0.5,
+                          fontWeight: FontWeight.w500)),
+                ],
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

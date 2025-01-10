@@ -13,7 +13,7 @@ class ForumScreenHeader extends StatelessWidget {
     final controller = Get.put(ForumController());
 
     return Container(
-        height: MediaQuery.sizeOf(context).height * 0.14,
+        height: MediaQuery.sizeOf(context).height * 0.1,
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/logo/app_background.png'),
@@ -21,10 +21,9 @@ class ForumScreenHeader extends StatelessWidget {
           ),
         ),
         child: Container(
-          padding: EdgeInsets.only(
-              left: AppDimens.appHorizontalPadding,
-              right: AppDimens.appHorizontalPadding,
-              top: MediaQuery.sizeOf(context).height * 0.04),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppDimens.appHorizontalPadding,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,

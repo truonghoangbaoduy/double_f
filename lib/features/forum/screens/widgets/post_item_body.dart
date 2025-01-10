@@ -15,35 +15,49 @@ class PostItemBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Obx(
-          () => Text(
-            isExpanded.value ? content : "${content.substring(0, 100)}...",
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  height: 1.5,
-                  letterSpacing: 0.5,
+        content.length < 100
+            ? Text(
+                content,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: AppColors.black,
+                      height: 1.5,
+                      letterSpacing: 0.5,
+                    ),
+              )
+            : Obx(() {
+                return Text(
+                  isExpanded.value ? content : content.substring(0, 100),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppColors.black,
+                        height: 1.5,
+                        letterSpacing: 0.5,
+                      ),
+                );
+              }),
+        content.length < 100
+            ? const SizedBox(
+                height: 0,
+              )
+            : TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                  padding: EdgeInsets.zero,
+                  minimumSize: Size.zero,
+                  side: BorderSide.none,
                 ),
-          ),
-        ),
-        TextButton(
-          style: TextButton.styleFrom(
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            padding: EdgeInsets.zero,
-            minimumSize: Size.zero,
-            side: BorderSide.none,
-          ),
-          onPressed: () => isExpanded.toggle(),
-          child: Obx(
-            () => Text(
-              isExpanded.value ? "Read Less" : "Read More",
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: AppColors.primary,
-                    decoration: TextDecoration.underline,
-                    decorationColor: AppColors.primary,
+                onPressed: () => isExpanded.toggle(),
+                child: Obx(
+                  () => Text(
+                    isExpanded.value ? 'Read less' : 'Read more',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: AppColors.primary,
+                          height: 1.5,
+                          letterSpacing: 0.5,
+                        ),
                   ),
-            ),
-          ),
-        ),
+                ),
+              ),
       ],
     );
   }
