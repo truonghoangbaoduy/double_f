@@ -1,5 +1,4 @@
 import 'package:double_f_last_mile_delivery/utils/constrains/colors.dart';
-import 'package:double_f_last_mile_delivery/utils/constrains/dimens.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
