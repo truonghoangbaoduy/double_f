@@ -1,3 +1,4 @@
+import 'package:double_f_last_mile_delivery/features/order/screens/order_placement.dart';
 import 'package:double_f_last_mile_delivery/features/home/screens/home_screen_navigator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -21,11 +22,11 @@ class OnBoardingController extends GetxController {
 
   /// Update current index & jump to next page
   void nextPage() {
-    if (currentPageIndex.value == 2) {
+    if (currentPageIndex.value == 3) {
       final storage = GetStorage();
 
       storage.write('IsFirstTime', false);
-      Get.offAll(HomeScreenNavigation());
+      Get.offAll(const OrderPlacementScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
@@ -34,7 +35,7 @@ class OnBoardingController extends GetxController {
 
   /// Update current index & jump to last page
   void skipPage() {
-    currentPageIndex.value = 2;
-    pageController.jumpToPage(2);
+    currentPageIndex.value = 3;
+    pageController.jumpToPage(3);
   }
 }
