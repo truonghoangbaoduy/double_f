@@ -1,4 +1,3 @@
-import "package:double_f_last_mile_delivery/utils/constrains/colors.dart";
 import "package:flutter/material.dart";
 import "package:double_f_last_mile_delivery/utils/theme/custom_themes/appbar_theme.dart";
 import "package:double_f_last_mile_delivery/utils/theme/custom_themes/bottom_sheet_theme.dart";

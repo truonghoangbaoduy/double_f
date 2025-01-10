@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 const List<String> cityList = <String>[
@@ -446,6 +447,24 @@ class _AddressOrderState extends State<AddressOrder> {
             ],
           ),
           const SizedBox(height: 16),
+          ClipRRect(
+              borderRadius: BorderRadius.circular(12.0),
+              child: const Image(
+                  image: AssetImage('assets/images/order/google_map.png'))),
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Time window',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const Row(
+                children: [Text('All day'), Icon(Iconsax.arrow_right_3)],
+              )
+            ],
+          ),
+          const SizedBox(height: 16)
         ],
       ),
     );
