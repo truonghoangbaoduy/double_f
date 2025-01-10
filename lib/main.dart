@@ -16,7 +16,7 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       themeMode: ThemeMode.light,
       theme: TAppTheme.lightTheme,
-      home: const OrderPlacementScreen(),
+      home: const OnboardingScreen(),
       getPages: [
         GetPage(
           name: '/onboarding',
